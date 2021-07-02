@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container px-4">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-1 border bg-light mt-5"><img src="{{doc.image.url}}" style=" max-width: 100%; max-height: 100%;"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light mt-5">
+          <p>{{doc.name}}</p>
+          <p>Qualifications: {{doc.qualification}}</p>
+           <p>Timings: {% for time in doc.consulting_time.all %}
+          {{time}},
+          {% endfor %}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
